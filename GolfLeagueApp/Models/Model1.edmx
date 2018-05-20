@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GolfLeagueDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MatchID" Type="int" Nullable="false" />
+          <Property Name="CourseName" Type="nchar" MaxLength="200" Nullable="false" />
+          <Property Name="Hole1Par" Type="int" Nullable="false" />
+          <Property Name="Hole1Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole2Par" Type="int" Nullable="false" />
+          <Property Name="Hole2Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole3Par" Type="int" Nullable="false" />
+          <Property Name="Hole3Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole4par" Type="int" Nullable="false" />
+          <Property Name="Hole4Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole5Par" Type="int" Nullable="false" />
+          <Property Name="Hole5Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole6Par" Type="int" Nullable="false" />
+          <Property Name="Hole6Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole7Par" Type="int" Nullable="false" />
+          <Property Name="Hole7Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole8Par" Type="int" Nullable="false" />
+          <Property Name="Hole8Handicap" Type="int" Nullable="false" />
+          <Property Name="Hole9Par" Type="int" Nullable="false" />
+          <Property Name="Hole9Handicap" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HandicapMethods">
+          <Key>
+            <PropertyRef Name="HandicapID" />
+          </Key>
+          <Property Name="HandicapID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Method" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Leagues">
+          <Key>
+            <PropertyRef Name="LeagueID" />
+          </Key>
+          <Property Name="LeagueID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeagueName" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LeagueYears">
+          <Key>
+            <PropertyRef Name="YearID" />
+          </Key>
+          <Property Name="YearID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaxScore" Type="int" />
+          <Property Name="LeagueID" Type="int" Nullable="false" />
+          <Property Name="HandicapID" Type="int" Nullable="false" />
+          <Property Name="PointID" Type="int" Nullable="false" />
+          <Property Name="MaxScoreID" Type="int" Nullable="false" />
+          <Property Name="TrackPutts" Type="int" />
+        </EntityType>
+        <EntityType Name="Matches">
+          <Key>
+            <PropertyRef Name="MatchID" />
+          </Key>
+          <Property Name="MatchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MatchDate" Type="datetime" Nullable="false" />
+          <Property Name="FunDay" Type="datetime" />
+          <Property Name="Team1Points" Type="int" Nullable="false" />
+          <Property Name="Team2Points" Type="int" Nullable="false" />
+          <Property Name="ScheduleID" Type="int" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+          <Property Name="Team1" Type="int" Nullable="false" />
+          <Property Name="Team2" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaxScores">
+          <Key>
+            <PropertyRef Name="MaxScoreID" />
+          </Key>
+          <Property Name="MaxScoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaxScoreType" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="PlayerID" />
+          </Key>
+          <Property Name="PlayerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerName" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="InitialHandicap" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="LeagueID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointSytems">
+          <Key>
+            <PropertyRef Name="PointID" />
+          </Key>
+          <Property Name="PointID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemName" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rounds">
+          <Key>
+            <PropertyRef Name="RoundID" />
+          </Key>
+          <Property Name="RoundID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoundDate" Type="date" Nullable="false" />
+          <Property Name="Hole1Strokes" Type="int" Nullable="false" />
+          <Property Name="Hole2Stokes" Type="int" Nullable="false" />
+          <Property Name="Hole3Strokes" Type="int" Nullable="false" />
+          <Property Name="Hole4Strokes" Type="int" Nullable="false" />
+          <Property Name="Hole5Strokes" Type="int" Nullable="false" />
+          <Property Name="Hole6Strokes" Type="int" Nullable="false" />
+          <Property Name="Hole7Strokes" Type="int" Nullable="false" />
+          <Property Name="Hole8Strokes" Type="int" Nullable="false" />
+          <Property Name="Hole9Strokes" Type="int" Nullable="false" />
+          <Property Name="TotalStrokes" Type="int" Nullable="false" />
+          <Property Name="TotalPutts" Type="int" Nullable="false" />
+          <Property Name="PlayerID" Type="int" Nullable="false" />
+          <Property Name="CourseID" Type="int" Nullable="false" />
+          <Property Name="MatchID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedules">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Name="ScheduleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YearID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TeamMembers">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamID" Type="int" Nullable="false" />
+          <Property Name="PlayerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teams">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YearID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LeagueYears_HandicapMethods">
+          <End Role="HandicapMethods" Type="Self.HandicapMethods" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYears" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HandicapMethods">
+              <PropertyRef Name="HandicapID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="HandicapID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeagueYears_Leagues">
+          <End Role="Leagues" Type="Self.Leagues" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYears" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leagues">
+              <PropertyRef Name="LeagueID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="LeagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeagueYears_MaxScores">
+          <End Role="MaxScores" Type="Self.MaxScores" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYears" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaxScores">
+              <PropertyRef Name="MaxScoreID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="MaxScoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeagueYears_PointSytems">
+          <End Role="PointSytems" Type="Self.PointSytems" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYears" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PointSytems">
+              <PropertyRef Name="PointID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="PointID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Matches_Matches">
+          <End Role="Matches" Type="Self.Matches" Multiplicity="1" />
+          <End Role="Matches1" Type="Self.Matches" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Matches">
+              <PropertyRef Name="MatchID" />
+            </Principal>
+            <Dependent Role="Matches1">
+              <PropertyRef Name="MatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Leagues">
+          <End Role="Leagues" Type="Self.Leagues" Multiplicity="1" />
+          <End Role="Players" Type="Self.Players" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leagues">
+              <PropertyRef Name="LeagueID" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="LeagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedules_LeagueYears">
+          <End Role="LeagueYears" Type="Self.LeagueYears" Multiplicity="1" />
+          <End Role="Schedules" Type="Self.Schedules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeagueYears">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="Schedules">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeamMembers_Players">
+          <End Role="Players" Type="Self.Players" Multiplicity="1" />
+          <End Role="TeamMembers" Type="Self.TeamMembers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="TeamMembers">
+              <PropertyRef Name="PlayerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teams_LeagueYears">
+          <End Role="LeagueYears" Type="Self.LeagueYears" Multiplicity="1" />
+          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeagueYears">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GolfLeagueDBModelStoreContainer">
+          <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HandicapMethods" EntityType="Self.HandicapMethods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leagues" EntityType="Self.Leagues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LeagueYears" EntityType="Self.LeagueYears" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Matches" EntityType="Self.Matches" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaxScores" EntityType="Self.MaxScores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointSytems" EntityType="Self.PointSytems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rounds" EntityType="Self.Rounds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeamMembers" EntityType="Self.TeamMembers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LeagueYears_HandicapMethods" Association="Self.FK_LeagueYears_HandicapMethods">
+            <End Role="HandicapMethods" EntitySet="HandicapMethods" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeagueYears_Leagues" Association="Self.FK_LeagueYears_Leagues">
+            <End Role="Leagues" EntitySet="Leagues" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeagueYears_MaxScores" Association="Self.FK_LeagueYears_MaxScores">
+            <End Role="MaxScores" EntitySet="MaxScores" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeagueYears_PointSytems" Association="Self.FK_LeagueYears_PointSytems">
+            <End Role="PointSytems" EntitySet="PointSytems" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Matches_Matches" Association="Self.FK_Matches_Matches">
+            <End Role="Matches" EntitySet="Matches" />
+            <End Role="Matches1" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Leagues" Association="Self.FK_Players_Leagues">
+            <End Role="Leagues" EntitySet="Leagues" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedules_LeagueYears" Association="Self.FK_Schedules_LeagueYears">
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+            <End Role="Schedules" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeamMembers_Players" Association="Self.FK_TeamMembers_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="TeamMembers" EntitySet="TeamMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teams_LeagueYears" Association="Self.FK_Teams_LeagueYears">
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GolfLeagueDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cours">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MatchID" Type="Int32" Nullable="false" />
+          <Property Name="CourseName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Hole1Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole1Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole2Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole2Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole3Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole3Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole4par" Type="Int32" Nullable="false" />
+          <Property Name="Hole4Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole5Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole5Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole6Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole6Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole7Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole7Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole8Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole8Handicap" Type="Int32" Nullable="false" />
+          <Property Name="Hole9Par" Type="Int32" Nullable="false" />
+          <Property Name="Hole9Handicap" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HandicapMethod">
+          <Key>
+            <PropertyRef Name="HandicapID" />
+          </Key>
+          <Property Name="HandicapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="LeagueYears" Relationship="Self.FK_LeagueYears_HandicapMethods" FromRole="HandicapMethods" ToRole="LeagueYears" />
+        </EntityType>
+        <EntityType Name="League">
+          <Key>
+            <PropertyRef Name="LeagueID" />
+          </Key>
+          <Property Name="LeagueID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeagueName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="LeagueYears" Relationship="Self.FK_LeagueYears_Leagues" FromRole="Leagues" ToRole="LeagueYears" />
+          <NavigationProperty Name="Players" Relationship="Self.FK_Players_Leagues" FromRole="Leagues" ToRole="Players" />
+        </EntityType>
+        <EntityType Name="LeagueYear">
+          <Key>
+            <PropertyRef Name="YearID" />
+          </Key>
+          <Property Name="YearID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaxScore" Type="Int32" />
+          <Property Name="LeagueID" Type="Int32" Nullable="false" />
+          <Property Name="HandicapID" Type="Int32" Nullable="false" />
+          <Property Name="PointID" Type="Int32" Nullable="false" />
+          <Property Name="MaxScoreID" Type="Int32" Nullable="false" />
+          <Property Name="TrackPutts" Type="Int32" />
+          <NavigationProperty Name="HandicapMethod" Relationship="Self.FK_LeagueYears_HandicapMethods" FromRole="LeagueYears" ToRole="HandicapMethods" />
+          <NavigationProperty Name="League" Relationship="Self.FK_LeagueYears_Leagues" FromRole="LeagueYears" ToRole="Leagues" />
+          <NavigationProperty Name="MaxScore1" Relationship="Self.FK_LeagueYears_MaxScores" FromRole="LeagueYears" ToRole="MaxScores" />
+          <NavigationProperty Name="PointSytem" Relationship="Self.FK_LeagueYears_PointSytems" FromRole="LeagueYears" ToRole="PointSytems" />
+          <NavigationProperty Name="Schedules" Relationship="Self.FK_Schedules_LeagueYears" FromRole="LeagueYears" ToRole="Schedules" />
+          <NavigationProperty Name="Teams" Relationship="Self.FK_Teams_LeagueYears" FromRole="LeagueYears" ToRole="Teams" />
+        </EntityType>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="MatchID" />
+          </Key>
+          <Property Name="MatchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MatchDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FunDay" Type="DateTime" Precision="3" />
+          <Property Name="Team1Points" Type="Int32" Nullable="false" />
+          <Property Name="Team2Points" Type="Int32" Nullable="false" />
+          <Property Name="ScheduleID" Type="Int32" Nullable="false" />
+          <Property Name="CourseID" Type="Int32" Nullable="false" />
+          <Property Name="Team1" Type="Int32" Nullable="false" />
+          <Property Name="Team2" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Matches1" Relationship="Self.FK_Matches_Matches" FromRole="Matches" ToRole="Matches1" />
+          <NavigationProperty Name="Match1" Relationship="Self.FK_Matches_Matches" FromRole="Matches1" ToRole="Matches" />
+        </EntityType>
+        <EntityType Name="MaxScore">
+          <Key>
+            <PropertyRef Name="MaxScoreID" />
+          </Key>
+          <Property Name="MaxScoreID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaxScoreType" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="LeagueYears" Relationship="Self.FK_LeagueYears_MaxScores" FromRole="MaxScores" ToRole="LeagueYears" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="PlayerID" />
+          </Key>
+          <Property Name="PlayerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="InitialHandicap" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="LeagueID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="League" Relationship="Self.FK_Players_Leagues" FromRole="Players" ToRole="Leagues" />
+          <NavigationProperty Name="TeamMembers" Relationship="Self.FK_TeamMembers_Players" FromRole="Players" ToRole="TeamMembers" />
+        </EntityType>
+        <EntityType Name="PointSytem">
+          <Key>
+            <PropertyRef Name="PointID" />
+          </Key>
+          <Property Name="PointID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="LeagueYears" Relationship="Self.FK_LeagueYears_PointSytems" FromRole="PointSytems" ToRole="LeagueYears" />
+        </EntityType>
+        <EntityType Name="Round">
+          <Key>
+            <PropertyRef Name="RoundID" />
+          </Key>
+          <Property Name="RoundID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoundDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hole1Strokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole2Stokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole3Strokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole4Strokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole5Strokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole6Strokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole7Strokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole8Strokes" Type="Int32" Nullable="false" />
+          <Property Name="Hole9Strokes" Type="Int32" Nullable="false" />
+          <Property Name="TotalStrokes" Type="Int32" Nullable="false" />
+          <Property Name="TotalPutts" Type="Int32" Nullable="false" />
+          <Property Name="PlayerID" Type="Int32" Nullable="false" />
+          <Property Name="CourseID" Type="Int32" Nullable="false" />
+          <Property Name="MatchID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Name="ScheduleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YearID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LeagueYear" Relationship="Self.FK_Schedules_LeagueYears" FromRole="Schedules" ToRole="LeagueYears" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TeamMember">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamID" Type="Int32" Nullable="false" />
+          <Property Name="PlayerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Player" Relationship="Self.FK_TeamMembers_Players" FromRole="TeamMembers" ToRole="Players" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YearID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LeagueYear" Relationship="Self.FK_Teams_LeagueYears" FromRole="Teams" ToRole="LeagueYears" />
+        </EntityType>
+        <Association Name="FK_LeagueYears_HandicapMethods">
+          <End Role="HandicapMethods" Type="Self.HandicapMethod" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HandicapMethods">
+              <PropertyRef Name="HandicapID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="HandicapID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeagueYears_Leagues">
+          <End Role="Leagues" Type="Self.League" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leagues">
+              <PropertyRef Name="LeagueID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="LeagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Players_Leagues">
+          <End Role="Leagues" Type="Self.League" Multiplicity="1" />
+          <End Role="Players" Type="Self.Player" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leagues">
+              <PropertyRef Name="LeagueID" />
+            </Principal>
+            <Dependent Role="Players">
+              <PropertyRef Name="LeagueID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeagueYears_MaxScores">
+          <End Role="MaxScores" Type="Self.MaxScore" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaxScores">
+              <PropertyRef Name="MaxScoreID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="MaxScoreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LeagueYears_PointSytems">
+          <End Role="PointSytems" Type="Self.PointSytem" Multiplicity="1" />
+          <End Role="LeagueYears" Type="Self.LeagueYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PointSytems">
+              <PropertyRef Name="PointID" />
+            </Principal>
+            <Dependent Role="LeagueYears">
+              <PropertyRef Name="PointID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedules_LeagueYears">
+          <End Role="LeagueYears" Type="Self.LeagueYear" Multiplicity="1" />
+          <End Role="Schedules" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeagueYears">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="Schedules">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teams_LeagueYears">
+          <End Role="LeagueYears" Type="Self.LeagueYear" Multiplicity="1" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LeagueYears">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="Teams">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Matches_Matches">
+          <End Role="Matches" Type="Self.Match" Multiplicity="1" />
+          <End Role="Matches1" Type="Self.Match" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Matches">
+              <PropertyRef Name="MatchID" />
+            </Principal>
+            <Dependent Role="Matches1">
+              <PropertyRef Name="MatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeamMembers_Players">
+          <End Role="Players" Type="Self.Player" Multiplicity="1" />
+          <End Role="TeamMembers" Type="Self.TeamMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="PlayerID" />
+            </Principal>
+            <Dependent Role="TeamMembers">
+              <PropertyRef Name="PlayerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GolfLeagueDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="Self.Cours" />
+          <EntitySet Name="HandicapMethods" EntityType="Self.HandicapMethod" />
+          <EntitySet Name="Leagues" EntityType="Self.League" />
+          <EntitySet Name="LeagueYears" EntityType="Self.LeagueYear" />
+          <EntitySet Name="Matches" EntityType="Self.Match" />
+          <EntitySet Name="MaxScores" EntityType="Self.MaxScore" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="PointSytems" EntityType="Self.PointSytem" />
+          <EntitySet Name="Rounds" EntityType="Self.Round" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TeamMembers" EntityType="Self.TeamMember" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <AssociationSet Name="FK_LeagueYears_HandicapMethods" Association="Self.FK_LeagueYears_HandicapMethods">
+            <End Role="HandicapMethods" EntitySet="HandicapMethods" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeagueYears_Leagues" Association="Self.FK_LeagueYears_Leagues">
+            <End Role="Leagues" EntitySet="Leagues" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Players_Leagues" Association="Self.FK_Players_Leagues">
+            <End Role="Leagues" EntitySet="Leagues" />
+            <End Role="Players" EntitySet="Players" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeagueYears_MaxScores" Association="Self.FK_LeagueYears_MaxScores">
+            <End Role="MaxScores" EntitySet="MaxScores" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeagueYears_PointSytems" Association="Self.FK_LeagueYears_PointSytems">
+            <End Role="PointSytems" EntitySet="PointSytems" />
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedules_LeagueYears" Association="Self.FK_Schedules_LeagueYears">
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+            <End Role="Schedules" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teams_LeagueYears" Association="Self.FK_Teams_LeagueYears">
+            <End Role="LeagueYears" EntitySet="LeagueYears" />
+            <End Role="Teams" EntitySet="Teams" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Matches_Matches" Association="Self.FK_Matches_Matches">
+            <End Role="Matches" EntitySet="Matches" />
+            <End Role="Matches1" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeamMembers_Players" Association="Self.FK_TeamMembers_Players">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="TeamMembers" EntitySet="TeamMembers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GolfLeagueDBModelStoreContainer" CdmEntityContainer="GolfLeagueDBEntities">
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.Cours">
+              <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="Hole1Par" ColumnName="Hole1Par" />
+                <ScalarProperty Name="Hole1Handicap" ColumnName="Hole1Handicap" />
+                <ScalarProperty Name="Hole2Par" ColumnName="Hole2Par" />
+                <ScalarProperty Name="Hole2Handicap" ColumnName="Hole2Handicap" />
+                <ScalarProperty Name="Hole3Par" ColumnName="Hole3Par" />
+                <ScalarProperty Name="Hole3Handicap" ColumnName="Hole3Handicap" />
+                <ScalarProperty Name="Hole4par" ColumnName="Hole4par" />
+                <ScalarProperty Name="Hole4Handicap" ColumnName="Hole4Handicap" />
+                <ScalarProperty Name="Hole5Par" ColumnName="Hole5Par" />
+                <ScalarProperty Name="Hole5Handicap" ColumnName="Hole5Handicap" />
+                <ScalarProperty Name="Hole6Par" ColumnName="Hole6Par" />
+                <ScalarProperty Name="Hole6Handicap" ColumnName="Hole6Handicap" />
+                <ScalarProperty Name="Hole7Par" ColumnName="Hole7Par" />
+                <ScalarProperty Name="Hole7Handicap" ColumnName="Hole7Handicap" />
+                <ScalarProperty Name="Hole8Par" ColumnName="Hole8Par" />
+                <ScalarProperty Name="Hole8Handicap" ColumnName="Hole8Handicap" />
+                <ScalarProperty Name="Hole9Par" ColumnName="Hole9Par" />
+                <ScalarProperty Name="Hole9Handicap" ColumnName="Hole9Handicap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HandicapMethods">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.HandicapMethod">
+              <MappingFragment StoreEntitySet="HandicapMethods">
+                <ScalarProperty Name="HandicapID" ColumnName="HandicapID" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leagues">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.League">
+              <MappingFragment StoreEntitySet="Leagues">
+                <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+                <ScalarProperty Name="LeagueName" ColumnName="LeagueName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LeagueYears">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.LeagueYear">
+              <MappingFragment StoreEntitySet="LeagueYears">
+                <ScalarProperty Name="YearID" ColumnName="YearID" />
+                <ScalarProperty Name="MaxScore" ColumnName="MaxScore" />
+                <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+                <ScalarProperty Name="HandicapID" ColumnName="HandicapID" />
+                <ScalarProperty Name="PointID" ColumnName="PointID" />
+                <ScalarProperty Name="MaxScoreID" ColumnName="MaxScoreID" />
+                <ScalarProperty Name="TrackPutts" ColumnName="TrackPutts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matches">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.Match">
+              <MappingFragment StoreEntitySet="Matches">
+                <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+                <ScalarProperty Name="FunDay" ColumnName="FunDay" />
+                <ScalarProperty Name="Team1Points" ColumnName="Team1Points" />
+                <ScalarProperty Name="Team2Points" ColumnName="Team2Points" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="Team1" ColumnName="Team1" />
+                <ScalarProperty Name="Team2" ColumnName="Team2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaxScores">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.MaxScore">
+              <MappingFragment StoreEntitySet="MaxScores">
+                <ScalarProperty Name="MaxScoreID" ColumnName="MaxScoreID" />
+                <ScalarProperty Name="MaxScoreType" ColumnName="MaxScoreType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.Player">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="InitialHandicap" ColumnName="InitialHandicap" />
+                <ScalarProperty Name="LeagueID" ColumnName="LeagueID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PointSytems">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.PointSytem">
+              <MappingFragment StoreEntitySet="PointSytems">
+                <ScalarProperty Name="PointID" ColumnName="PointID" />
+                <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rounds">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.Round">
+              <MappingFragment StoreEntitySet="Rounds">
+                <ScalarProperty Name="RoundID" ColumnName="RoundID" />
+                <ScalarProperty Name="RoundDate" ColumnName="RoundDate" />
+                <ScalarProperty Name="Hole1Strokes" ColumnName="Hole1Strokes" />
+                <ScalarProperty Name="Hole2Stokes" ColumnName="Hole2Stokes" />
+                <ScalarProperty Name="Hole3Strokes" ColumnName="Hole3Strokes" />
+                <ScalarProperty Name="Hole4Strokes" ColumnName="Hole4Strokes" />
+                <ScalarProperty Name="Hole5Strokes" ColumnName="Hole5Strokes" />
+                <ScalarProperty Name="Hole6Strokes" ColumnName="Hole6Strokes" />
+                <ScalarProperty Name="Hole7Strokes" ColumnName="Hole7Strokes" />
+                <ScalarProperty Name="Hole8Strokes" ColumnName="Hole8Strokes" />
+                <ScalarProperty Name="Hole9Strokes" ColumnName="Hole9Strokes" />
+                <ScalarProperty Name="TotalStrokes" ColumnName="TotalStrokes" />
+                <ScalarProperty Name="TotalPutts" ColumnName="TotalPutts" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedules">
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+                <ScalarProperty Name="YearID" ColumnName="YearID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeamMembers">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.TeamMember">
+              <MappingFragment StoreEntitySet="TeamMembers">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="GolfLeagueDBModel.Team">
+              <MappingFragment StoreEntitySet="Teams">
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="YearID" ColumnName="YearID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

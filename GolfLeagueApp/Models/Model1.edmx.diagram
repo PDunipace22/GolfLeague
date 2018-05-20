@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1c1db8bbc4f54fe9b4c4e8d0bee43a2b" Name="Diagram1">
+        <EntityTypeShape EntityType="GolfLeagueDBModel.Cours" Width="1.5" PointX="7.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.HandicapMethod" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.League" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.LeagueYear" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.Match" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.MaxScore" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.Player" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.PointSytem" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.Round" Width="1.5" PointX="9.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.Schedule" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.sysdiagram" Width="1.5" PointX="9.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.TeamMember" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GolfLeagueDBModel.Team" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_LeagueYears_HandicapMethods" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_LeagueYears_Leagues" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_Players_Leagues" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_LeagueYears_MaxScores" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_LeagueYears_PointSytems" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_Schedules_LeagueYears" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_Teams_LeagueYears" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_Matches_Matches" ManuallyRouted="false" />
+        <AssociationConnector Association="GolfLeagueDBModel.FK_TeamMembers_Players" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
