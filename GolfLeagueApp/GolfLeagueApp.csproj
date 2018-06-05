@@ -190,8 +190,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CoursController.cs" />
+    <Compile Include="Controllers\HandicapMethodsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LeaguesController.cs" />
+    <Compile Include="Controllers\LeagueYearsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MatchesController.cs" />
+    <Compile Include="Controllers\MaxScoresController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
+    <Compile Include="Controllers\PointSytemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -343,6 +351,46 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Cours\Create.cshtml" />
+    <Content Include="Views\Cours\Delete.cshtml" />
+    <Content Include="Views\Cours\Details.cshtml" />
+    <Content Include="Views\Cours\Edit.cshtml" />
+    <Content Include="Views\Cours\Index.cshtml" />
+    <Content Include="Views\HandicapMethods\Create.cshtml" />
+    <Content Include="Views\HandicapMethods\Delete.cshtml" />
+    <Content Include="Views\HandicapMethods\Details.cshtml" />
+    <Content Include="Views\HandicapMethods\Edit.cshtml" />
+    <Content Include="Views\HandicapMethods\Index.cshtml" />
+    <Content Include="Views\Leagues\Create.cshtml" />
+    <Content Include="Views\Leagues\Delete.cshtml" />
+    <Content Include="Views\Leagues\Details.cshtml" />
+    <Content Include="Views\Leagues\Edit.cshtml" />
+    <Content Include="Views\Leagues\Index.cshtml" />
+    <Content Include="Views\LeagueYears\Create.cshtml" />
+    <Content Include="Views\LeagueYears\Delete.cshtml" />
+    <Content Include="Views\LeagueYears\Details.cshtml" />
+    <Content Include="Views\LeagueYears\Edit.cshtml" />
+    <Content Include="Views\LeagueYears\Index.cshtml" />
+    <Content Include="Views\Matches\Create.cshtml" />
+    <Content Include="Views\Matches\Delete.cshtml" />
+    <Content Include="Views\Matches\Details.cshtml" />
+    <Content Include="Views\Matches\Edit.cshtml" />
+    <Content Include="Views\Matches\Index.cshtml" />
+    <Content Include="Views\MaxScores\Create.cshtml" />
+    <Content Include="Views\MaxScores\Delete.cshtml" />
+    <Content Include="Views\MaxScores\Details.cshtml" />
+    <Content Include="Views\MaxScores\Edit.cshtml" />
+    <Content Include="Views\MaxScores\Index.cshtml" />
+    <Content Include="Views\Players\Create.cshtml" />
+    <Content Include="Views\Players\Delete.cshtml" />
+    <Content Include="Views\Players\Details.cshtml" />
+    <Content Include="Views\Players\Edit.cshtml" />
+    <Content Include="Views\Players\Index.cshtml" />
+    <Content Include="Views\PointSytems\Create.cshtml" />
+    <Content Include="Views\PointSytems\Delete.cshtml" />
+    <Content Include="Views\PointSytems\Details.cshtml" />
+    <Content Include="Views\PointSytems\Edit.cshtml" />
+    <Content Include="Views\PointSytems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,66 @@
+﻿@model GolfLeagueApp.Models.LeagueYear
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LeagueYear</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrackPutts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrackPutts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HandicapMethod.Method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HandicapMethod.Method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.League.LeagueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.League.LeagueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxScore1.MaxScoreType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxScore1.MaxScoreType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PointSytem.SystemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PointSytem.SystemName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.YearID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

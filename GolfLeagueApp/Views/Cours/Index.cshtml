@@ -1,0 +1,147 @@
+﻿@model IEnumerable<GolfLeagueApp.Models.Cours>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MatchID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole1Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole1Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole2Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole2Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole3Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole3Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole4par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole4Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole5Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole5Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole6Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole6Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole7Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole7Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole8Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole8Handicap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole9Par)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hole9Handicap)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatchID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole1Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole1Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole2Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole2Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole3Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole3Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole4par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole4Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole5Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole5Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole6Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole6Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole7Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole7Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole8Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole8Handicap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole9Par)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hole9Handicap)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
+        </td>
+    </tr>
+}
+
+</table>

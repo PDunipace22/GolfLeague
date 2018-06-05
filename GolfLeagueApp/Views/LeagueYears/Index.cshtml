@@ -1,0 +1,63 @@
+﻿@model IEnumerable<GolfLeagueApp.Models.LeagueYear>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrackPutts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HandicapMethod.Method)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.League.LeagueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxScore1.MaxScoreType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PointSytem.SystemName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrackPutts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HandicapMethod.Method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.League.LeagueName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxScore1.MaxScoreType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PointSytem.SystemName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.YearID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.YearID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.YearID })
+        </td>
+    </tr>
+}
+
+</table>
